@@ -1,9 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
+  // User data is private and dynamic, so the app does not use Cache Components.
   turbopack: {
     rules: {
       "*.css": {
@@ -12,6 +10,7 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  serverExternalPackages: ["pdfjs-dist", "tesseract.js", "mammoth"],
 };
 
 export default nextConfig;
